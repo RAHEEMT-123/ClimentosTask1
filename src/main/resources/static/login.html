@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Climentos Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="left-section">
+
+        <div class="brand">
+
+            <div class="logo">C</div>
+
+            <h1>CLIMENTOS</h1>
+
+        </div>
+
+        <div class="left-content">
+
+            <h2>Welcome to</h2>
+
+            <h2 class="highlight">
+                Climentos Technologies
+            </h2>
+
+            <p>
+                Build your future with
+                innovation and technology.
+            </p>
+
+        </div>
+
+        <!-- TECHNOLOGY ILLUSTRATION -->
+
+        <div class="technology-image">
+
+            <div class="tech-circle circle-one">☁</div>
+
+            <div class="tech-circle circle-two">⚙</div>
+
+            <div class="tech-circle circle-three">♙</div>
+
+            <div class="laptop">
+
+                <div class="screen"></div>
+
+                <div class="keyboard"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right-section">
+
+        <div class="form-container">
+
+            <h1>Welcome to Climentos</h1>
+
+
+            <!-- LOGIN FORM -->
+
+            <div id="loginForm">
+
+                <h2>Login to your account</h2>
+
+                <input
+                        type="text"
+                        id="loginUsername"
+                        placeholder="Username / Email">
+
+                <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password">
+                <span class = "eye-icon" onclick="toggglePassword('loginPassword',this)"
+                      role="buton" arial-label="showPassword"></span>
+
+                <button onclick="login()">
+                    Login
+                </button>
+
+                <p class="forgot"
+                   onclick="showForgot()">
+
+                    Forgot Password?
+
+                </p>
+
+                <p class="account-text">
+
+                    Don't have an account?
+
+                    <span onclick="showSignup()">
+                        Create Account
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <!-- SIGNUP FORM -->
+
+            <div id="signupForm" class="hidden">
+
+                <h2>Create Account</h2>
+
+                <input
+                        type="text"
+                        id="signupName"
+                        placeholder="Full Name">
+
+                <input
+                        type="text"
+                        id="signupUsername"
+                        placeholder="Username">
+
+                <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="Email">
+
+                <input
+                        type="password"
+                        id="signupPassword"
+                        placeholder="Password">
+
+                <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm Password">
+
+                <button onclick="signup()">
+                    Register
+                </button>
+
+                <p onclick="showLogin()">
+                    Back to Login
+                </p>
+
+            </div>
+
+
+            <!-- FORGOT PASSWORD FORM -->
+
+            <div id="forgotForm" class="hidden">
+
+                <h2>Reset Password</h2>
+
+                <input
+                        type="email"
+                        id="forgotEmail"
+                        placeholder="Registered Email">
+
+                <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="New Password">
+
+                <input
+                        type="password"
+                        id="confirmNewPassword"
+                        placeholder="Confirm New Password">
+
+                <button onclick="resetPassword()">
+                    Reset Password
+                </button>
+
+                <p onclick="showLogin()">
+                    Back to Login
+                </p>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ClimentosTask1
+  datasource:
+    url: jdbc:mysql://localhost:3306/climentosdb
+    username: root
+    password: Raheem@9989
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+server:
+  port: 8080
+
+
+
+
+

@@ -4,9 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Climentos Login</title>
 
@@ -18,16 +16,11 @@
 
 <div class="main-container">
 
-    <!-- LEFT SIDE -->
-
     <div class="left-section">
 
         <div class="brand">
-
             <div class="logo">C</div>
-
             <h1>CLIMENTOS</h1>
-
         </div>
 
         <div class="left-content">
@@ -39,8 +32,7 @@
             </h2>
 
             <p>
-                Build your future with
-                innovation and technology.
+                Build your future with innovation and technology.
             </p>
 
         </div>
@@ -49,26 +41,63 @@
 
         <div class="technology-image">
 
-            <div class="tech-circle circle-one">☁</div>
+            <div class="tech-orbit orbit-one"></div>
+            <div class="tech-orbit orbit-two"></div>
 
-            <div class="tech-circle circle-two">⚙</div>
+            <!-- Floating Technology Icons -->
 
-            <div class="tech-circle circle-three">♙</div>
+            <div class="tech-icon html-icon">&lt;/&gt;</div>
+
+            <div class="tech-icon cloud-icon">☁</div>
+
+            <div class="tech-icon java-icon">☕</div>
+
+            <div class="tech-icon gear-icon">⚙</div>
+
+            <div class="tech-icon database-icon">▤</div>
+
+            <!-- Laptop -->
 
             <div class="laptop">
 
-                <div class="screen"></div>
+                <div class="laptop-screen">
 
-                <div class="keyboard"></div>
+                    <div class="screen-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="coding">
+
+                        <p><span class="purple">class</span> Climentos {</p>
+
+                        <p>&nbsp;&nbsp;<span class="blue">String</span> future =</p>
+
+                        <p>&nbsp;&nbsp;<span class="green">"Innovation";</span></p>
+
+                        <p>&nbsp;&nbsp;<span class="purple">void</span> create() {</p>
+
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;BuildTechnology();</p>
+
+                        <p>&nbsp;&nbsp;}</p>
+
+                        <p>}</p>
+
+                    </div>
+
+                </div>
+
+                <div class="laptop-base"></div>
 
             </div>
+
+            <div class="tech-glow"></div>
 
         </div>
 
     </div>
 
-
-    <!-- RIGHT SIDE -->
 
     <div class="right-section">
 
@@ -76,8 +105,7 @@
 
             <h1>Welcome to Climentos</h1>
 
-
-            <!-- LOGIN FORM -->
+            <!-- LOGIN -->
 
             <div id="loginForm">
 
@@ -88,22 +116,31 @@
                         id="loginUsername"
                         placeholder="Username / Email">
 
-                <input
-                        type="password"
-                        id="loginPassword"
-                        placeholder="Password">
-                <span class = "eye-icon" onclick="toggglePassword('loginPassword',this)"
-                      role="buton" arial-label="showPassword"></span>
+
+                <div class="password-container">
+
+                    <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Password">
+
+                    <span
+                            class="eye-icon"
+                            onclick="togglePassword('loginPassword', this)">
+
+                </span>
+
+                </div>
+
+
+
 
                 <button onclick="login()">
                     Login
                 </button>
 
-                <p class="forgot"
-                   onclick="showForgot()">
-
+                <p class="forgot" onclick="showForgot()">
                     Forgot Password?
-
                 </p>
 
                 <p class="account-text">
@@ -119,7 +156,7 @@
             </div>
 
 
-            <!-- SIGNUP FORM -->
+            <!-- SIGNUP -->
 
             <div id="signupForm" class="hidden">
 
@@ -140,60 +177,83 @@
                         id="signupEmail"
                         placeholder="Email">
 
-                <input
-                        type="password"
-                        id="signupPassword"
-                        placeholder="Password">
 
-                <input
-                        type="password"
-                        id="confirmPassword"
-                        placeholder="Confirm Password">
+
+
+                <!-- PASSWORD -->
+
+                <div class="password-container">
+
+                    <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Password">
+
+                    <span
+                            class="eye-icon"
+                            onclick="togglePassword('signupPassword', this)">
+
+                </span>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="password-container">
+
+
+
+                    <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm Password">
+
+                    <span
+                            class="eye-icon"
+                            onclick="togglePassword('confirmPassword', this)">
+
+                </span>
+
+                </div>
+
+
 
                 <button onclick="signup()">
                     Register
                 </button>
 
-                <p onclick="showLogin()">
+                <a href="#" class="back-to-login"
+                   onclick="showLogin(); return false;">
                     Back to Login
-                </p>
+                </a>
 
             </div>
 
 
-            <!-- FORGOT PASSWORD FORM -->
+            <!-- FORGOT PASSWORD -->
 
             <div id="forgotForm" class="hidden">
 
-                <h2>Reset Password</h2>
+                <h2>Forgot Password?</h2>
+
+                <p>Enter your registered email address.</p>
 
                 <input
                         type="email"
                         id="forgotEmail"
                         placeholder="Registered Email">
 
-                <input
-                        type="password"
-                        id="newPassword"
-                        placeholder="New Password">
-
-                <input
-                        type="password"
-                        id="confirmNewPassword"
-                        placeholder="Confirm New Password">
-
-                <button onclick="resetPassword()">
-                    Reset Password
+                <button onclick="forgotPassword()">
+                    Send Reset Link
                 </button>
 
-                <p onclick="showLogin()">
+                <a href="#" class="back-to-login"
+                   onclick="showLogin(); return false;">
                     Back to Login
-                </p>
+                </a>
 
             </div>
-
-
-            <!-- MESSAGE -->
 
             <p id="message"></p>
 
@@ -206,5 +266,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>

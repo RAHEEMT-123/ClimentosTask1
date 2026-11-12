@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,466 +5,444 @@
 }
 
 body {
-
     font-family: Arial, sans-serif;
-
     min-height: 100vh;
-
 }
-
-
-/* MAIN CONTAINER */
 
 .main-container {
-
     display: flex;
-
     width: 100%;
-
     min-height: 100vh;
-
 }
-
 
 /* LEFT SECTION */
 
 .left-section {
-
     width: 50%;
-
     min-height: 100vh;
 
     background: linear-gradient(
             135deg,
             #450024,
-            #850046,
+            #85004e,
             #c9007f
     );
 
     color: white;
-
     padding: 50px;
-
     position: relative;
-
     overflow: hidden;
-
 }
-
 
 /* BRAND */
 
 .brand {
-
     display: flex;
-
     align-items: center;
-
     gap: 20px;
-
 }
 
 .brand h1 {
-
     font-size: 38px;
-
     letter-spacing: 3px;
-
 }
 
 .logo {
-
     width: 65px;
-
     height: 65px;
-
     border-radius: 50%;
-
     background: #00aaff;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     font-size: 45px;
-
     font-weight: bold;
-
 }
-
 
 /* LEFT CONTENT */
 
 .left-content {
-
     margin-top: 65px;
-
 }
 
 .left-content h2 {
-
     font-size: 38px;
-
     margin-bottom: 10px;
-
 }
 
 .highlight {
-
     color: #00c8ff;
-
 }
 
 .left-content p {
-
     font-size: 21px;
-
     line-height: 1.6;
-
     margin-top: 25px;
-
-    max-width: 450px;
-
 }
-
-
-/* TECHNOLOGY ILLUSTRATION */
-
-.technology-image {
-
-    position: relative;
-
-    height: 350px;
-
-    margin-top: 35px;
-
-    background: radial-gradient(
-            circle,
-            #0077bb,
-            transparent 70%
-    );
-
-}
-
-.tech-circle {
-
-    position: absolute;
-
-    width: 75px;
-
-    height: 75px;
-
-    border: 2px solid #00d5ff;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 35px;
-
-    color: white;
-
-    box-shadow: 0 0 20px #00cfff;
-
-}
-
-.circle-one {
-
-    top: 30px;
-
-    left: 65%;
-
-}
-
-.circle-two {
-
-    top: 130px;
-
-    left: 15%;
-
-}
-
-.circle-three {
-
-    top: 170px;
-
-    right: 10%;
-
-}
-
-
-/* LAPTOP */
-
-.laptop {
-
-    position: absolute;
-
-    bottom: 30px;
-
-    left: 35%;
-
-    width: 250px;
-
-}
-
-.screen {
-
-    height: 140px;
-
-    background: #071a35;
-
-    border: 7px solid #9dbbd9;
-
-    border-radius: 10px;
-
-    box-shadow: 0 0 25px #00bfff;
-
-}
-
-.keyboard {
-
-    height: 15px;
-
-    background: #b4d4ed;
-
-    border-radius: 0 0 15px 15px;
-
-}
-
 
 /* RIGHT SECTION */
 
 .right-section {
-
     width: 50%;
-
     min-height: 100vh;
 
-    background: #ffffff;
+    background: linear-gradient(
+            135deg,
+            #dbeafe,
+            #eff6ff
+    );
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     padding: 40px;
-
 }
 
-
-/* FORM CONTAINER */
+/* FORM */
 
 .form-container {
-
     width: 100%;
-
     max-width: 500px;
-
     text-align: center;
 
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .form-container h1 {
-
-    font-size: 36px;
-
+    font-size: 32px;
     color: #123d75;
-
     margin-bottom: 20px;
-
 }
 
 .form-container h2 {
-
     font-size: 23px;
-
     color: #333;
-
-    margin-bottom: 30px;
-
+    margin-bottom: 25px;
 }
-
 
 /* INPUT */
 
 input {
-
     width: 100%;
-
-    padding: 17px;
-
+    padding: 15px;
     margin: 12px 0;
 
     border: 1px solid #c7cbd4;
+    border-radius: 10px;
 
-    border-radius: 12px;
-
-    font-size: 17px;
-
+    font-size: 16px;
     outline: none;
-
 }
 
 input:focus {
-
     border-color: #0874d1;
-
     box-shadow: 0 0 5px #80bfff;
-
 }
-
 
 /* BUTTON */
 
 button {
-
     width: 100%;
-
-    padding: 17px;
+    padding: 16px;
 
     background: #064b91;
-
     color: white;
 
     border: none;
+    border-radius: 10px;
 
-    border-radius: 12px;
-
-    font-size: 20px;
-
+    font-size: 18px;
     font-weight: bold;
 
     cursor: pointer;
-
     margin-top: 15px;
-
 }
 
 button:hover {
-
     background: #0877cf;
-
 }
 
-
-/* LINKS */
+/* FORGOT */
 
 .forgot {
-
-    margin-top: 25px;
-
+    margin-top: 20px;
     color: #0066cc;
-
     cursor: pointer;
-
-    font-size: 17px;
-
+    font-size: 16px;
 }
 
 .account-text {
-
-    margin-top: 30px;
-
+    margin-top: 25px;
     color: #333;
-
 }
 
 span {
-
     color: #005bd1;
-
     font-weight: bold;
-
     cursor: pointer;
-
 }
 
+/* BACK TO LOGIN */
 
-/* HIDE FORMS */
+.back-to-login {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 10px 25px;
+
+    background: #e8f1ff;
+    color: #064b91;
+
+    border-radius: 8px;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* HIDE */
 
 .hidden {
-
     display: none !important;
-
 }
 
-#message {
+/* MESSAGE */
 
+#message,
+#resetMessage {
     margin-top: 20px;
-
     color: red;
-
     font-weight: bold;
-
 }
 
-
-/* MOBILE RESPONSIVE */
+/* RESPONSIVE */
 
 @media(max-width: 768px) {
 
     .main-container {
-
         flex-direction: column;
-
     }
 
     .left-section,
     .right-section {
-
         width: 100%;
-
     }
 
     .left-section {
-
-        min-height: 350px;
-
+        min-height: 300px;
         padding: 30px;
-
     }
 
     .left-content h2 {
-
         font-size: 26px;
-
-    }
-
-    .technology-image {
-
-        display: none;
-
     }
 
     .right-section {
-
-        min-height: 650px;
-
+        min-height: 600px;
     }
 
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+/* TECHNOLOGY ILLUSTRATION */
+
+.technology-image {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* LAPTOP */
+
+.laptop {
+    position: relative;
+    z-index: 3;
+    animation: floatLaptop 4s ease-in-out infinite;
+}
+
+.laptop-screen {
+    width: 270px;
+    height: 185px;
+    background: #17152d;
+    border: 7px solid #55516c;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(65, 210, 255, 0.5);
     overflow: hidden;
 }
 
-body {
-    min-height: 100vh;
+.screen-top {
+    height: 25px;
+    background: #302b49;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 12px;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+.screen-top span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff5c91;
 }
+
+.screen-top span:nth-child(2) {
+    background: #ffd166;
+}
+
+.screen-top span:nth-child(3) {
+    background: #4be3a5;
+}
+
+/* CODING TEXT */
+
+.coding {
+    padding: 12px;
+    font-family: monospace;
+    font-size: 11px;
+    color: white;
+    line-height: 1.2;
+}
+
+.coding p {
+    margin: 5px 0;
+}
+
+.purple {
+    color: #d58aff;
+}
+
+.blue {
+    color: #50dfff;
+}
+
+.green {
+    color: #5cf2b0;
+}
+
+/* LAPTOP BASE */
+
+.laptop-base {
+    width: 310px;
+    height: 12px;
+    background: linear-gradient(#c8c8dc, #77758e);
+    margin-left: -20px;
+    border-radius: 2px 2px 12px 12px;
+}
+
+/* FLOATING ICONS */
+
+.tech-icon {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 27px;
+    font-weight: bold;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 4;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.html-icon {
+    top: 20px;
+    left: 12%;
+    color: #ffcfdf;
+}
+
+.cloud-icon {
+    top: 15px;
+    right: 15%;
+    color: #51e2ff;
+    animation-delay: 0.5s;
+}
+
+.java-icon {
+    bottom: 35px;
+    right: 12%;
+    color: #ffb69f;
+    animation-delay: 1s;
+}
+
+.gear-icon {
+    bottom: 30px;
+    left: 15%;
+    color: #ffe28a;
+    animation-delay: 1.5s;
+}
+
+.database-icon {
+    top: 48%;
+    right: 3%;
+    color: #8ce9ff;
+    animation-delay: 0.8s;
+}
+
+/* ORBIT CIRCLES */
+
+.tech-orbit {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 350px;
+    height: 250px;
+}
+
+.orbit-two {
+    width: 430px;
+    height: 310px;
+}
+
+/* GLOW */
+
+.tech-glow {
+    position: absolute;
+    width: 300px;
+    height: 80px;
+    bottom: 25px;
+    background: #ff4eae;
+    filter: blur(65px);
+    opacity: 0.5;
+}
+
+/* ANIMATIONS */
+
+@keyframes floatLaptop {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+

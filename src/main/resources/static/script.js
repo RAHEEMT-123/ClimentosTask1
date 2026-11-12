@@ -11,7 +11,6 @@ function showLogin() {
         .classList.remove("hidden");
 
     clearMessage();
-
 }
 
 
@@ -25,7 +24,6 @@ function showSignup() {
         .classList.remove("hidden");
 
     clearMessage();
-
 }
 
 
@@ -39,7 +37,6 @@ function showForgot() {
         .classList.remove("hidden");
 
     clearMessage();
-
 }
 
 
@@ -55,7 +52,6 @@ function hideAllForms() {
 
     document.getElementById("forgotForm")
         .classList.add("hidden");
-
 }
 
 
@@ -72,23 +68,27 @@ function clearMessage() {
 
 async function signup() {
 
-    const name = document.getElementById("signupName").value;
+    const name =
+        document.getElementById("signupName").value.trim();
 
-    const username = document.getElementById("signupUsername").value;
+    const username =
+        document.getElementById("signupUsername").value.trim();
 
-    const email = document.getElementById("signupEmail").value;
+    const email =
+        document.getElementById("signupEmail").value.trim();
 
-    const password = document.getElementById("signupPassword").value;
+    const password =
+        document.getElementById("signupPassword").value;
 
-    const confirmPassword = document.getElementById("confirmPassword").value;
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
 
-
-    if (!name || !username || !email || !password || !confirmPassword) {
+    if (!name || !username || !email || !password ||
+        !confirmPassword) {
 
         alert("Please fill all fields");
 
         return;
-
     }
 
     if (password !== confirmPassword) {
@@ -96,7 +96,6 @@ async function signup() {
         alert("Passwords do not match");
 
         return;
-
     }
 
     try {
@@ -110,12 +109,10 @@ async function signup() {
             },
 
             body: JSON.stringify({
-
                 name,
                 username,
                 email,
                 password
-
             })
 
         });
@@ -124,20 +121,18 @@ async function signup() {
 
         if (!response.ok) {
 
-            throw new Error(result.message);
+            throw new Error(
+                result.message || "Signup failed"
+            );
 
         }
 
         alert(result.message);
 
         document.getElementById("signupName").value = "";
-
         document.getElementById("signupUsername").value = "";
-
         document.getElementById("signupEmail").value = "";
-
         document.getElementById("signupPassword").value = "";
-
         document.getElementById("confirmPassword").value = "";
 
         showLogin();
@@ -157,17 +152,17 @@ async function signup() {
 
 async function login() {
 
-    const username = document.getElementById("loginUsername").value;
+    const username =
+        document.getElementById("loginUsername").value.trim();
 
-    const password = document.getElementById("loginPassword").value;
-
+    const password =
+        document.getElementById("loginPassword").value;
 
     if (!username || !password) {
 
         alert("Enter username and password");
 
         return;
-
     }
 
     try {
@@ -180,11 +175,11 @@ async function login() {
                 "Content-Type": "application/json"
             },
 
-            body: JSON.stringify({
+            credentials: "same-origin",
 
+            body: JSON.stringify({
                 username,
                 password
-
             })
 
         });
@@ -193,7 +188,9 @@ async function login() {
 
         if (!response.ok) {
 
-            throw new Error(result.message);
+            throw new Error(
+                result.message || "Login failed"
+            );
 
         }
 
@@ -213,59 +210,50 @@ async function login() {
 
 // FORGOT PASSWORD
 
-async function resetPassword() {
+async function forgotPassword() {
 
-    const email = document.getElementById("forgotEmail").value;
+    const email =
+        document.getElementById("forgotEmail").value.trim();
 
-    const password = document.getElementById("newPassword").value;
+    if (!email) {
 
-    const confirmPassword = document.getElementById("confirmNewPassword").value;
-
-
-    if (!email || !password || !confirmPassword) {
-
-        alert("Please fill all fields");
+        alert("Please enter registered email");
 
         return;
-
-    }
-
-    if (password !== confirmPassword) {
-
-        alert("Passwords do not match");
-
-        return;
-
     }
 
     try {
 
-        const response = await fetch(API_URL + "/reset-password", {
+        const response = await fetch(
+            API_URL + "/forgot-password",
+            {
 
-            method: "POST",
+                method: "POST",
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            body: JSON.stringify({
+                body: JSON.stringify({
+                    email
+                })
 
-                email,
-                password
-
-            })
-
-        });
+            }
+        );
 
         const result = await response.json();
 
         if (!response.ok) {
 
-            throw new Error(result.message);
+            throw new Error(
+                result.message || "Email sending failed"
+            );
 
         }
 
         alert(result.message);
+
+        document.getElementById("forgotEmail").value = "";
 
         showLogin();
 
@@ -278,6 +266,10 @@ async function resetPassword() {
     }
 
 }
+
+
+
+
 
 
 

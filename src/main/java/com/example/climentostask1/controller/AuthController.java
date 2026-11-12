@@ -1,7 +1,6 @@
 package com.example.climentostask1.controller;
 
 import com.example.climentostask1.entity.User;
-
 import com.example.climentostask1.service.AuthService;
 
 import jakarta.servlet.http.HttpSession;
@@ -9,7 +8,6 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.HttpStatus;
-
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
@@ -21,11 +19,8 @@ public class AuthController {
     private final AuthService service;
 
     public AuthController(AuthService service) {
-
         this.service = service;
-
     }
-
 
     // SIGNUP
 
@@ -37,41 +32,28 @@ public class AuthController {
                 "message",
                 service.signup(user)
         );
-
     }
-
 
     // LOGIN
 
     @PostMapping("/login")
     public Map<String, String> login(
-
             @RequestBody Map<String, String> data,
-
             HttpSession session) {
 
         User user = service.login(
-
                 data.get("username"),
-
                 data.get("password")
-
         );
 
         session.setAttribute("userId", user.getId());
-
         session.setAttribute("userName", user.getName());
 
         return Map.of(
-
                 "message", "Login successful",
-
                 "name", user.getName()
-
         );
-
     }
-
 
     // CHECK SESSION
 
@@ -82,48 +64,44 @@ public class AuthController {
         Object userId = session.getAttribute("userId");
 
         if (userId == null) {
-
             throw new ResponseStatusException(
                     HttpStatus.UNAUTHORIZED,
                     "Please login"
             );
-
         }
 
         return Map.of(
-
                 "loggedIn", true,
-
                 "name", session.getAttribute("userName")
-
         );
-
     }
 
+    // FORGOT PASSWORD
+
+    @PostMapping("/forgot-password")
+    public Map<String, String> forgotPassword(
+            @RequestBody Map<String, String> data) {
+
+        return Map.of(
+                "message",
+                service.forgotPassword(data.get("email"))
+        );
+    }
 
     // RESET PASSWORD
 
     @PostMapping("/reset-password")
     public Map<String, String> resetPassword(
-
             @RequestBody Map<String, String> data) {
 
         return Map.of(
-
                 "message",
-
                 service.resetPassword(
-
-                        data.get("email"),
-
+                        data.get("token"),
                         data.get("password")
-
                 )
-
         );
-
     }
-
 
     // LOGOUT
 
@@ -134,11 +112,8 @@ public class AuthController {
         session.invalidate();
 
         return Map.of(
-
                 "message", "Logout successful"
-
         );
-
     }
-
 }
+
